@@ -517,7 +517,7 @@
           </div>
         </div>
       </div>
-
+      <h1 style="color: #ff1493;">Your special moments</h1>
       <div class="photo-frame">
         <!-- INSTRUCTIONS: Replace the src below with your friend's image -->
         <!-- Example: src="friend-photo.jpg" if in same folder -->
@@ -553,6 +553,26 @@
     </div>
 
     <script>
+      // Loop photos on click
+const photoArray = [
+  "./imgs/myfri.jpg",
+  "./imgs/myfri2.jpg",
+  "./imgs/myfri3.jpg",
+  "./imgs/myfri4.jpg",
+   "./imgs/myfri5.jpg",
+    "./imgs/myfri6.jpg"
+
+];
+
+let currentPhotoIndex = 0;
+const birthdayPhoto = document.getElementById("birthdayPhoto");
+
+birthdayPhoto.addEventListener("click", function () {
+  currentPhotoIndex++;
+  if (currentPhotoIndex >= photoArray.length) currentPhotoIndex = 0;
+  birthdayPhoto.src = photoArray[currentPhotoIndex];
+});
+
       // Create confetti
       function createConfetti() {
         for (let i = 0; i < 50; i++) {
